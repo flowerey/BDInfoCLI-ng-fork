@@ -1,14 +1,15 @@
-# BDInfoCLI-ng
+# BDInfoCLI-ng-fork
 
-> Modified from: [Ethan930717/BDInfoCLI-ng](https://github.com/Ethan930717/BDInfoCLI-ng/tree/kimoji-bdinfo)
+Updated fork of BDInfoCLI-ng that can be compiled on Windows 11, also has some other updates.
 
-**Original source:** [CinemaSquid BDInfo](https://www.videohelp.com/software/BDInfo)
+Forked from [rokibhasansagar/BDInfoCLI-ng](https://github.com/rokibhasansagar/BDInfoCLI-ng)
+→ which was forked from [Ethan930717/BDInfoCLI-ng (kimoji-bdinfo branch)](https://github.com/Ethan930717/BDInfoCLI-ng/tree/kimoji-bdinfo)
+→ which originates from [UniqProject/BDInfo](https://github.com/UniqProject/BDInfo)
+→ based on the **original** [CinemaSquid BDInfo](https://www.videohelp.com/software/BDInfo)
 
-**Forked from:** [UniqProject/BDInfo](https://github.com/UniqProject/BDInfo)
+**Additional sources:** [Tripplesixty/BDInfoCLI](https://github.com/Tripplesixty/BDInfoCLI)
 
-**Additional sources from:** [BDInfoCLI](https://github.com/Tripplesixty/BDInfoCLI)
-
-BDInfoCLI-ng is the latest BDInfo (with UHD support) modified for CLI use. It implements an interface similar to BDInfoCLI, built on the latest BDInfo code base with minimal invasive changes for easier maintenance with future BDInfo updates.
+BDInfoCLI-ng-fork is the latest BDInfo (with UHD support) modified for CLI use. It implements an interface similar to BDInfoCLI, built on the latest BDInfo code base with minimal invasive changes for easier maintenance with future BDInfo updates.
 
 ## Usage
 
@@ -56,8 +57,10 @@ BDInfo.exe -v
 * Windows Vista, 7, or higher
 * .NET Framework 4.8 or higher
 * Source Code
+* NuGet
 
 BDInfoCLI-ng can be built using the free [Microsoft Visual Studio Community Edition](https://visualstudio.microsoft.com/vs/community/).
+
 Steps:
 
 1. Install Visual Studio.
