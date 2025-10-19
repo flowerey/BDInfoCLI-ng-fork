@@ -1,0 +1,82 @@
+#!/bin/bash
+
+if [ $# -eq 0 ]; then
+    docker run --rm -it --user $(id -u) rokibhasansagar/BDInfoCLI-ng
+    exit 1
+fi
+
+LONG_OPTS="help,list,mpls:,whole,version"
+TEMP=$(getopt -o h,l,m:,w,v --long $LONG_OPTS -n "bdinfo" -- "$@")
+eval set -- "$TEMP"
+
+HELP=""
+LIST=""
+WHOLE=""
+VERSION=""
+MPLS=()
+
+while true; do
+    case "$1" in
+        -h|--help)
+            HELP="-h"
+            shift
+            ;;
+        -l|--list)
+            LIST="-l"
+            shift
+            ;;
+        -m|--mpls)
+            shift
+            MPLS=("-m" "$1")
+            shift
+            ;;
+        -v|--version)
+            VERSION="-v"
+            shift
+            ;;
+        -w|--whole)
+            WHOLE="-w"
+            shift
+            ;;
+        --)
+            shift
+            break
+            ;;
+        -*)
+            echo "Invalid option: $1"
+            exit 1
+            ;;
+        *)
+            echo "getopt failed"
+            exit 1
+            ;;
+    esac
+done
+
+source_path=$(readlink -f "$1")
+if [ -n "$source_path" ]; then
+    source_dir=$(dirname "$source_path")
+    source_base=$(basename "$source_path")
+    source_mount_docker_arg=("-v" "$source_dir:/mnt/bd")
+    source_mount_arg="/mnt/bd/$source_base"
+
+    if [[ -z "$2" && ! -d "$source_path" ]]; then
+        echo "Error: REPORT_DEST must be given if BD_PATH is an ISO."
+        exit 1
+    fi
+
+    dest_path=$(readlink -f "${2:-$1}")
+    dest_mount_docker_arg=("-v" "$dest_path:/mnt/report")
+    dest_mount_arg="/mnt/report"
+fi
+
+docker run --rm --user $(id -u) \
+    "${source_mount_docker_arg[@]}" \
+    "${dest_mount_docker_arg[@]}" \
+    -it rokibhasansagar/BDInfoCLI-ng \
+    $HELP \
+    $VERSION \
+    "${MPLS[@]}" \
+    $WHOLE \
+    "$source_mount_arg" \
+    "$dest_mount_arg"
