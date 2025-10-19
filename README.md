@@ -59,7 +59,7 @@ BDInfo.exe -v
 * Source Code
 * NuGet
 
-BDInfoCLI-ng can be built using the free [Microsoft Visual Studio Community Edition](https://visualstudio.microsoft.com/vs/community/).
+BDInfoCLI-ng-fork can be built using the free [Microsoft Visual Studio Community Edition](https://visualstudio.microsoft.com/vs/community/).
 
 Steps:
 
@@ -69,7 +69,7 @@ Steps:
 
 ## Linux
 
-BDInfoCLI-ng can be built and run using [Mono](https://www.mono-project.com/).
+BDInfoCLI-ng-fork can be built and run using [Mono](https://www.mono-project.com/).
 
 ### Recommended: Using Docker
 
@@ -89,13 +89,13 @@ Alternatively, run the Docker container manually:
 
 ```bash
 # Without report destination
-docker run --rm -it -v <BD_PATH>:/mnt/bd fr3akyphantom/bdinfocli-ng /mnt/bd
+docker run --rm -it -v <BD_PATH>:/mnt/bd flowerey/BDInfoCLI-ng-fork /mnt/bd
 
 # With report destination
-docker run --rm -it -v <BD_PATH>:/mnt/bd -v <REPORT_DEST>:/mnt/report fr3akyphantom/bdinfocli-ng /mnt/bd /mnt/report
+docker run --rm -it -v <BD_PATH>:/mnt/bd -v <REPORT_DEST>:/mnt/report flowerey/BDInfoCLI-ng-fork /mnt/bd /mnt/report
 ```
 
-Without Docker, you can build and run BDInfoCLI-ng manually with Mono (see Dockerfile for reference).
+Without Docker, you can build and run BDInfoCLI-ng-fork manually with Mono (see Dockerfile for reference).
 
 ## Mac
 
