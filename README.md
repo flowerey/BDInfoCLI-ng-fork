@@ -3,8 +3,11 @@
 Updated fork of BDInfoCLI-ng that can be compiled on Windows 11, also has some other updates.
 
 Forked from [rokibhasansagar/BDInfoCLI-ng](https://github.com/rokibhasansagar/BDInfoCLI-ng)
+
 → which was forked from [Ethan930717/BDInfoCLI-ng (kimoji-bdinfo branch)](https://github.com/Ethan930717/BDInfoCLI-ng/tree/kimoji-bdinfo)
+
 → which originates from [UniqProject/BDInfo](https://github.com/UniqProject/BDInfo)
+
 → based on the **original** [CinemaSquid BDInfo](https://www.videohelp.com/software/BDInfo)
 
 **Additional sources:** [Tripplesixty/BDInfoCLI](https://github.com/Tripplesixty/BDInfoCLI)
