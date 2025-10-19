@@ -2,7 +2,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.14.36603.0 d17.14
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BDInfo", "BDInfoCLI-ng-fork\BDInfo\BDInfo.csproj", "{3209AF1D-4762-4960-9DE5-13E90E77EE96}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BDInfo", "BDInfo\BDInfo.csproj", "{3209AF1D-4762-4960-9DE5-13E90E77EE96}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
