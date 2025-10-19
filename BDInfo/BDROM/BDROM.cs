@@ -1,22 +1,3 @@
-//============================================================================
-// BDInfo - Blu-ray Video and Audio Analysis Tool
-// Copyright © 2010 Cinema Squid
-//
-// This library is free software; you can redistribute it and/or
-// modify it under the terms of the GNU Lesser General Public
-// License as published by the Free Software Foundation; either
-// version 2.1 of the License, or (at your option) any later version.
-//
-// This library is distributed in the hope that it will be useful,
-// but WITHOUT ANY WARRANTY; without even the implied warranty of
-// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
-// Lesser General Public License for more details.
-//
-// You should have received a copy of the GNU Lesser General Public
-// License along with this library; if not, write to the Free Software
-// Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
-//=============================================================================
-
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -211,7 +192,7 @@ namespace BDInfo
                     IsDBOX = true;
                 }
 
-                if(DiscDirectoryMETA != null)
+                if (DiscDirectoryMETA != null)
                 {
                     DiscFileInfo[] metaFiles = DiscDirectoryMETA.GetFiles("bdmt_eng.xml", SearchOption.AllDirectories);
                     if (metaFiles != null && metaFiles.Length > 0)
@@ -573,18 +554,18 @@ namespace BDInfo
         private DirectoryInfo GetDirectoryBDMV(
             string path)
         {
-                DirectoryInfo dir = new DirectoryInfo(path);
+            DirectoryInfo dir = new DirectoryInfo(path);
 
-                while (dir != null)
+            while (dir != null)
+            {
+                if (dir.Name == "BDMV")
                 {
-                    if (dir.Name == "BDMV")
-                    {
-                        return dir;
-                    }
-                    dir = dir.Parent;
+                    return dir;
                 }
+                dir = dir.Parent;
+            }
 
-                return GetDirectory("BDMV", new DirectoryInfo(path), 0);
+            return GetDirectory("BDMV", new DirectoryInfo(path), 0);
         }
 
         private DirectoryInfo GetDirectory(string name, DirectoryInfo dir, int searchDepth)
